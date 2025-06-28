@@ -1,0 +1,20 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Ensure proper layout for full screen */
+html, body, #root {
+  height: 100%;
+  width: 100%;
+  margin: 0;
+  padding: 0;
+  overflow-x: hidden;
+}
+
+/* Fix sidebar positioning on large screens */
+@media (min-width: 1024px) {
+  .sidebar-container {
+    position: static !important;
+    transform: translateX(0) !important;
+  }
+}
