@@ -1,5 +1,6 @@
-import { useState, useEffect, createContext, useContext } from 'react';
-import { getTranslation, getLanguageByCode, Language } from '../utils/languages';
+import { useState, createContext, useContext } from 'react';
+import { getLanguageByCode, Language } from '../utils/languages';
+import { translations } from '../utils/translations';
 
 interface LanguageContextType {
   currentLanguage: string;
@@ -26,7 +27,7 @@ export const useLanguageState = () => {
     
     // Try to detect from browser
     const browserLang = navigator.language.split('-')[0];
-    const supportedLanguages = ['en', 'sn', 'nd', 'sw', 'yo', 'zu', 'am', 'ar', 'fr', 'pt'];
+    const supportedLanguages = ['en', 'sn', 'sw', 'yo', 'zu', 'am', 'ar'];
     
     return supportedLanguages.includes(browserLang) ? browserLang : 'en';
   });
@@ -37,7 +38,8 @@ export const useLanguageState = () => {
   };
 
   const t = (key: string): string => {
-    return getTranslation(currentLanguage, key);
+    const langTranslations = translations[currentLanguage as keyof typeof translations] || translations.en;
+    return langTranslations[key as keyof typeof langTranslations] || key;
   };
 
   const language = getLanguageByCode(currentLanguage);

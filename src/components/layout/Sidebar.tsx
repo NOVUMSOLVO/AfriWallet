@@ -8,15 +8,23 @@ import {
   TrendingUp, 
   Send, 
   Settings,
+  Target,
+  PieChart,
+  QrCode,
+  Brain,
   HelpCircle,
-  MessageCircle
+  MessageCircle,
+  BarChart3,
+  Shield,
+  Zap,
+  CandlestickChart
 } from 'lucide-react';
 import { useLanguage } from '../../hooks/useLanguage';
 
 interface MenuItem {
   id: string;
   label: string;
-  icon: React.ComponentType<{ size?: number; className?: string }>;
+  icon: React.ComponentType<{ size?: number | string; className?: string }>;
   badge?: number;
 }
 
@@ -30,10 +38,18 @@ interface SidebarProps {
 const menuItems: MenuItem[] = [
   { id: 'dashboard', label: 'dashboard', icon: Home },
   { id: 'wallet', label: 'wallet', icon: Wallet },
+  { id: 'qr', label: 'QR Pay', icon: QrCode },
+  { id: 'trading', label: 'Trading', icon: CandlestickChart },
+  { id: 'budget', label: 'budget', icon: PieChart },
+  { id: 'goals', label: 'goals', icon: Target },
   { id: 'chama', label: 'chama', icon: Users, badge: 2 },
   { id: 'exchange', label: 'exchange', icon: ArrowLeftRight },
   { id: 'invest', label: 'invest', icon: TrendingUp },
   { id: 'remit', label: 'remit', icon: Send },
+  { id: 'ai-insights', label: 'AI Insights', icon: Brain },
+  { id: 'advisor', label: 'AI Advisor', icon: Zap },
+  { id: 'reports', label: 'Reports', icon: BarChart3 },
+  { id: 'security-advanced', label: 'Security+', icon: Shield },
   { id: 'settings', label: 'settings', icon: Settings }
 ];
 
