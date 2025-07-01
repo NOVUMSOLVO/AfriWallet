@@ -2,6 +2,9 @@
 
 AfriWallet is a comprehensive digital wallet and financial management application designed to serve the unique needs of African users. It offers a multilingual, multi-currency platform for managing personal and group finances (chamas), remittances, investments, and currency exchange—all in one place.
 
+## 🚀 **Live Demo**
+🌐 **[Visit AfriWallet Live](https://your-netlify-url.netlify.app)** *(Deploy this repo to get your URL)*
+
 ## 🚀 Features
 
 ### 📱 **Core Wallet Features**
@@ -174,24 +177,45 @@ return <button>{t('send')}</button>; // "Send" / "Tumira" / "Tuma"
 
 ## 🚀 Deployment
 
-### Vite Build
-```bash
-npm run build
-# Generates optimized build in dist/ folder
-```
+This repository is ready for immediate deployment to Netlify!
 
-### Deploy to Vercel
+### Deploy to Netlify (Recommended)
+
+#### Method 1: GitHub Integration
+1. Go to [netlify.com](https://netlify.com)
+2. Click "New site from Git"
+3. Connect your GitHub account
+4. Select this repository
+5. Netlify will auto-detect settings from `netlify.toml`
+6. Click "Deploy site"
+
+#### Method 2: Manual Upload
+1. Run `npm run build` to create the `dist` folder
+2. Go to [netlify.com](https://netlify.com) 
+3. Drag and drop the `dist` folder
+
+#### Configuration Files Included:
+- ✅ `netlify.toml` - Build configuration
+- ✅ `dist/_redirects` - SPA routing support
+
+### Other Deployment Options
+
+#### Deploy to Vercel
 ```bash
 npm install -g vercel
 vercel --prod
 ```
 
-### Deploy to Netlify
+#### Deploy to GitHub Pages
 ```bash
-# Build first
 npm run build
+# Upload dist/ folder contents
+```
 
-# Deploy dist/ folder to Netlify
+### Vite Build
+```bash
+npm run build
+# Generates optimized build in dist/ folder
 ```
 
 ## 🤝 Contributing
